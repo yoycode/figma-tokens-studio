@@ -1,0 +1,12 @@
+{
+  "name": "figma-tokens-studio",
+  "version": "1.0.0",
+  "description": "디자인 토큰을 CSS로 변환하는 프로젝트",
+  "scripts": {
+    "build": "style-dictionary build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "style-dictionary": "^3.8.0"
+  }
+} 

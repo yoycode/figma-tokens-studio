@@ -1,0 +1,29 @@
+name: Check tokens.json changes
+
+on:
+  pull_request:
+    paths:
+      - '**/tokens.json'
+
+jobs:
+  check-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build tokens
+        run: npm run build
+
+      - name: Echo changes
+        run: |
+          echo "tokens.json 파일이 변경되었습니다!"
+          echo "변경사항을 확인해주세요."
